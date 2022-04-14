@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MultilineTruncate.MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <x:String x:Key="lorem">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </x:String>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Margin="10" Spacing="15">
+
+        <Label Text="TailTruncation with MaxLines of 1:"/>
+
+        <Label 
+                MaxLines="1" LineBreakMode="TailTruncation"
+                FontAttributes="Bold" FontSize="14"
+                Text="{StaticResource lorem}" />
+
+        <Label Text="TailTruncation with MaxLines of 3:"/>
+
+        <Label 
+                LineBreakMode="TailTruncation" MaxLines="3" 
+                FontAttributes="Bold" FontSize="14"
+                Text="{StaticResource lorem}" />
+
+    </VerticalStackLayout>
+</ContentPage>
