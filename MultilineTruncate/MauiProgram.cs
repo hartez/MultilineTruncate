@@ -22,7 +22,7 @@ public static class MauiProgram
 	{
 #if ANDROID
 
-        	/* 
+        /* 
 		 * The default Controls handling of LineBreakMode and MaxLines on Android
 		 * only allows single lines when using text truncation. However, combining
 		 * setMaxLines() and TextUtils.TruncateAt.END _is_ supported on Android 
@@ -35,12 +35,12 @@ public static class MauiProgram
 		 * and sets the maximum lines to the target value.
 		*/
 
-        	static void UpdateMaxLines(Microsoft.Maui.Handlers.LabelHandler handler, ILabel label) 
+        static void UpdateMaxLines(Microsoft.Maui.Handlers.LabelHandler handler, ILabel label) 
 		{
 			var textView = handler.PlatformView;
-			if (textView.Ellipsize == Android.Text.TextUtils.TruncateAt.End)
+			if (label is Label controlsLabel && textView.Ellipsize == Android.Text.TextUtils.TruncateAt.End)
 			{
-				textView.SetMaxLines(label.MaxLines);
+				textView.SetMaxLines(controlsLabel.MaxLines);
 			}
 		};
 
